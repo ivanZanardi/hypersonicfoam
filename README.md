@@ -1,4 +1,4 @@
-# hypersonicFoam
+# HypersonicFoam
 
 #### Hypersonic gas dynamics code for OpenFOAM toolbox.
 
@@ -10,7 +10,7 @@ In **hyStrath** (look at the [code original version](https://github.com/vincentc
 + *hy2Foam*: a CFD solver for hypersonic reacting flows;  
 + *hy2MhdFoam*: the *hy2Foam* solver with additional MagnetoHydroDynamics (MHD) capabilities.  
 
-Compared to the original version, the code has been modified by perfecting or implementing from scratch the following new features:
+Compared to the original version, the code has been modified by improving or implementing from scratch the following new features:
 
 + Kurganov scheme calculation capability for the convective term in species conservation equations [1];  
 + Electronic energy reactive source term generated during the ionization process [2];  
@@ -32,7 +32,7 @@ In **hyPoliMi**:
 
 ### Download
 ```sh
-git clone https://ivanzanardi95@bitbucket.org/ivanzanardi95/hypersonicfoam.git
+git clone https://github.com/ivanZanardi/hypersonicFoam
 ```
 
 ### Installation
@@ -55,6 +55,19 @@ where _2_ is the number of processors to be used during the installation.
 ## Publications
 
 I. Zanardi. *Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows*. Master thesis, Politecnico di Milano, Italy, April 2020.
+
+```sh
+@article{Zanardi2020Thesis,
+  author  = {Lu, Lu and Meng, Xuhui and Mao, Zhiping and Karniadakis, George Em},
+  title   = {{Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows}},
+  journal = {SIAM Review},
+  volume  = {63},
+  number  = {1},
+  pages   = {208-228},
+  year    = {2021},
+  doi     = {10.1137/19M1274067}
+}
+```
 
 ---  
 
