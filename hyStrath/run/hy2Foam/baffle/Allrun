@@ -1,0 +1,25 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+nProcs=2
+if [ $# -ne 0 ]
+  then nProcs=$1;
+fi
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+if [ $nProcs -eq 1 ] ; then
+  runApplication $(getApplication)
+else
+  runApplication decomposePar
+  runParallel    $(getApplication)
+  runApplication reconstructPar
+  rm -rf processor*
+fi
+
+./Allpostprocess
+
+#------------------------------------------------------------------------------

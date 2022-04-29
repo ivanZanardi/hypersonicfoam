@@ -1,0 +1,59 @@
+#!/bin/bash
+cd ${0%/*} || exit 1
+
+set -e
+dir="$WM_PROJECT_USER_DIR"
+
+
+# Clean libraries -------------------------------------------------------------
+cd $dir/src/thermophysicalModels/strath/
+wclean all
+
+cd $dir/src/TurbulenceModels/
+wclean all
+
+cd $dir/src/hTCModels
+wclean libso
+
+cd $dir/src/finiteVolume
+wclean libso
+
+cd $dir/src/functionObjects/forces
+wclean libso
+
+cd $dir/src/functionObjects/field
+wclean libso
+
+cd $dir/src/fvOptions
+wclean libso
+
+if [ -d "$dir/src/mhdModel" ]; then
+  cd $dir/src/mhdModel
+  wclean libso
+fi
+
+
+# Clean executables -----------------------------------------------------------
+#---- solvers ----
+cd $dir/applications/solvers/compressible/hy2Foam/
+./Allwclean
+
+if [ -d "$dir/applications/solvers/compressible/hy2MhdFoam" ]; then
+  cd $dir/applications/solvers/compressible/hy2MhdFoam
+  wclean
+fi
+
+#---- utilities ----
+cd $dir/applications/utilities/mesh/generation/makeAxialMesh
+wclean
+
+cd $dir/applications/utilities/mesh/generation/blockMeshDG
+wclean all
+
+
+cd $dir
+
+echo "
+Hypersonic CFD module $WM_PROJECT_VERSION cleaned successfully.
+"
+

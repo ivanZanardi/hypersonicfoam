@@ -1,0 +1,46 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      hTCReactionsEarth93;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Chul Park
+// Review of Chemical-Kinetic Problems of Future NASA Missions, I: Earth Entries
+// JOURNAL OF THERMOPHYSICS AND HEAT TRANSFER
+// Vol.7, No.3, July.-Sept. 1993
+
+species
+(
+    O2
+    O
+);
+  
+reactions
+{
+    oxygenTBReaction
+    {
+        type     irreversiblethirdBodyArrheniusReaction;
+        reaction "O2 + M = 2O + M";
+        controlT dissociation;
+        A        2.0e18;
+        beta     -1.5;
+        Ta       59500;
+        coeffs
+        (
+            ("O2" 1.0)
+            ("O" 5.0)
+        );
+    }
+}
+

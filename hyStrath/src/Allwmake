@@ -1,0 +1,47 @@
+#!/bin/sh
+cd ${0%/*} || exit 1
+# Run from src/ directory only
+
+set -e
+currentDir=`pwd`
+
+nProcs=2
+if [ $# -ne 0 ]
+  then nProcs=$1;
+fi
+
+
+# Compile new libraries -------------------------------------------------------
+cd $currentDir/thermophysicalModels/strath/
+./Allwmake -j$nProcs
+
+cd $currentDir/TurbulenceModels/
+./Allwmake -j$nProcs
+
+cd $currentDir/thermophysicalModels/strath/
+./AllwmakeBis -j$nProcs
+
+cd $currentDir/hTCModels
+wmake -j$nProcs libso
+
+cd $currentDir/finiteVolume
+wmake -j$nProcs libso
+
+cd $currentDir/functionObjects
+./Allwmake -j$nProcs
+
+cd $currentDir/fvOptions
+wmake -j$nProcs libso
+
+if [ -d "$currentDir/mhdModel" ]; then
+  cd $currentDir/mhdModel
+  wmake -j$nProcs libso
+fi
+
+
+# Re-set to the initial directory ---------------------------------------------
+cd $currentDir
+
+echo "
+'src' folder compiled successfully.
+"

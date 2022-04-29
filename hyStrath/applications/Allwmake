@@ -1,0 +1,37 @@
+#!/bin/sh
+cd ${0%/*} || exit 1
+# Run from applications/ directory only
+
+set -e
+currentDir=`pwd`
+
+nProcs=2
+if [ $# -ne 0 ]
+  then nProcs=$1;
+fi
+
+
+# Compile new executables -----------------------------------------------------
+#---- solvers ----
+cd $currentDir/solvers/compressible/hy2Foam
+./Allwmake -j$nProcs
+
+if [ -d "$currentDir/solvers/compressible/hy2MhdFoam" ]; then
+  cd $currentDir/solvers/compressible/hy2MhdFoam
+  wmake -j$nProcs
+fi
+
+#---- utilities ----
+cd $currentDir/utilities/mesh/generation/makeAxialMesh
+wmake -j$nProcs
+
+cd $currentDir/utilities/mesh/generation/blockMeshDG
+./Allwmake -j$nProcs
+
+
+# Re-set to the initial directory ---------------------------------------------
+cd $currentDir
+
+echo "
+'applications' folder compiled successfully.
+"

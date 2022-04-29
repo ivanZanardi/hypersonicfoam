@@ -1,0 +1,88 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  plus                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createBafflesDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#include "../0/include/initialConditions"
+
+// Whether to convert internal faces only (so leave boundary faces intact).
+// This is only relevant if your face selection type can pick up boundary
+// faces.
+internalFacesOnly true;
+
+
+// Baffles to create.
+baffles
+{
+    obstacle
+    {
+        //- Use predefined faceZone to select faces and orientation.
+        type        faceZone;
+        zoneName    baffleFaces;
+
+        patchPairs
+        {
+            type            wall;
+
+            patchFields
+            {
+                e-
+                {
+                    type            zeroGradient;
+                }
+                O
+                {
+                    type            zeroGradient;
+                }
+                O+
+                {
+                    type            zeroGradient;
+                }
+                O+
+                {
+                    type            zeroGradient;
+                }
+                O2
+                {
+                    type            zeroGradient;
+                }
+                O2+
+                {
+                    type            zeroGradient;
+                }
+                p
+                {
+                    type            zeroGradient;
+                }
+                Tt
+                {
+		    type            fixedValue;
+		    value           uniform $Twall;
+                }
+                Tv
+                {
+		    type            fixedValue;
+		    value           uniform $Twall;
+                }
+                U
+                {
+                    type            noSlip;
+                }
+            }
+        }
+    }
+}
+
+
+// ************************************************************************* //

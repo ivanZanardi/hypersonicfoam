@@ -1,0 +1,13 @@
+
+binaryDiffusivityModel/binaryDiffusivityModel.C
+
+noBinaryDiffusivityModel/noBinaryDiffusivityModel.C
+constant/constant.C
+Gupta/GuptaO.C
+Gupta/GuptaD.C
+Stephani/Stephani.C
+Wright/WrightO.C
+
+diffusivityModel/diffusivityModel.C
+
+LIB = $(FOAM_USER_LIBBIN)/libdiffusivityModels

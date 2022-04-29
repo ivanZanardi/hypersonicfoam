@@ -1,0 +1,41 @@
+reactions
+{
+    un-named-reaction-1
+    {
+        type            reversibleArrheniusReaction;
+        reaction        "N + NO = N2 + O";
+        A               2.7e+10;
+        beta            0;
+        Ta              178.633;
+    }
+    un-named-reaction-2
+    {
+        type            reversibleArrheniusReaction;
+        reaction        "N + O2 = NO + O";
+        A               9e+06;
+        beta            1;
+        Ta              3270.74;
+    }
+    un-named-reaction-3
+    {
+        type            reversibleThirdBodyArrhenius;
+        reaction        "2O = O2";
+        A               1.2e+11;
+        beta            -1;
+        Ta              0;
+        coeffs
+	5
+	(
+	(O2 1)
+	(O 1)
+	(N 1)
+	(NO 1)
+	(N2 1)
+	)
+	;
+    }
+}
+
+Thigh   5000;
+Tlow    200;
+

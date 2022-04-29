@@ -1,0 +1,27 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+nProcs=2
+if [ $# -ne 0 ]
+  then nProcs=$1;
+fi
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+cp -r 0.bak 0
+cp -r ./constant/polyMesh.bak ./constant/polyMesh
+runApplication checkMesh
+
+if [ $nProcs -eq 1 ] ; then
+  runApplication $(getApplication)
+else
+  runApplication decomposePar
+  runParallel    $(getApplication)
+  runApplication reconstructPar
+  rm -rf processor*
+fi
+
+./Allpostprocess
+
+#------------------------------------------------------------------------------

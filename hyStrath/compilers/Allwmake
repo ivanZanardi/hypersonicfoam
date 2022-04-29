@@ -1,0 +1,22 @@
+#!/bin/sh
+cd ${0%/*} || exit 1
+
+set -e
+dir="$WM_PROJECT_USER_DIR"
+
+
+# Compile new libraries -------------------------------------------------------
+cd $dir/src
+./Allwmake
+
+
+# Compile new executables ------------------------------------------------------
+cd $dir/applications
+./Allwmake
+
+
+cd $dir
+
+echo "
+Hypersonic CFD module $WM_PROJECT_VERSION compiled successfully.
+"

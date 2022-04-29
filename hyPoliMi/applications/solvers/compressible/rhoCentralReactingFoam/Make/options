@@ -1,0 +1,32 @@
+EXE_INC = \
+    -I$(FOAM_SOLVERS)/compressible/rhoCentralFoam \
+    -I$(FOAM_SOLVERS)/compressible/rhoCentralFoam/BCs/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/transportModels/compressible/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/reactionThermo/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/chemistryModel/lnInclude \
+    -I$(LIB_SRC)/ODE/lnInclude \
+    -I$(LIB_SRC)/combustionModels/lnInclude \
+    -I$(LIB_SRC)/TurbulenceModels/turbulenceModels/lnInclude \
+    -I$(LIB_SRC)/TurbulenceModels/compressible/lnInclude \
+    -I$(LIB_SRC)/dynamicFvMesh/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude
+
+EXE_LIBS = \
+    -lfiniteVolume \
+    -lfvOptions \
+    -lcompressibleTransportModels \
+    -lfluidThermophysicalModels \
+    -lspecie \
+    -lrhoCentralFoam \
+    -lturbulenceModels \
+    -lcompressibleTurbulenceModels \
+    -ldynamicFvMesh \
+    -ltopoChangerFvMesh \
+    -lmeshTools \
+    -lchemistryModel \
+    -lODE \
+    -lcombustionModels \
+    -lreactionThermophysicalModels

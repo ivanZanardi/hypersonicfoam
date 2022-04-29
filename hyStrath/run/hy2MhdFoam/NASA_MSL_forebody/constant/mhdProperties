@@ -1,0 +1,35 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1706                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      mhdProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+mhd             	true;
+
+mhdModel        	lowReMag; // The only used herein
+
+collisionData   	constant;
+
+conductivityModel	Bush; // For sigma calculation
+
+T0              	12000; // Bush model
+
+n               	2; // Bush model
+
+sigma0          	5100;
+
+hallEffect      	true; // Always for MHD effect
+
+
+// ************************************************************************* //

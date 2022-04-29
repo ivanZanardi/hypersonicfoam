@@ -1,0 +1,106 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      hTCReactionsEarth93_Shatalov;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/*
+Rate constants for O2 dissociation/ionization at high temperature from
+Shatalov's empirical model and Park's rates.
+See:
+    "Investigation of oxygen dissociation and vibrational relaxation
+    at temperatures 4000-10800 K".
+    L. B. Ibraguimova, A. L. Sergievskaya, V. Yu. Levashov,
+    O. P. Shatalov, Yu. V. Tunik, and I. E. Zabelinskii.
+    http://dx.doi.org/10.1063/1.4813070
+
+    "Review of Chemical-Kinetic Problems of Future NASA Missions,
+    I: Earth Entries."
+    C. Park. Journal of Thermophysics and Heat Transfer.
+    Vol.7, No.3, July.-Sept. 1993
+*/
+
+species
+(
+    O2
+    O2+
+    O
+    O+
+    e-
+);
+  
+reactions
+{
+    // LOW Temperature Shatalov Reaction
+    oxygenTBReactionShatalovLowT
+    {
+        type     irreversiblethirdBodyShatalovReaction;
+        reaction "O2 + M = 2O + M";
+        controlT oxygenDissociationLowT;
+        A        2.0e12;
+        beta     0.3;
+        Th       2238;
+        Ta       59380;
+        coeffs
+        (
+            ("O2" 1.0)
+            ("O2+" 1.0)
+            ("O" 3.5)
+            ("O+" 3.5)
+            ("e-" 0.0)
+        );
+    }
+
+    // HIGH Temperature Shatalov Reaction
+    oxygenTBReactionShatalovHighT
+    {
+        type     irreversiblethirdBodyArrheniusReaction;
+        reaction "O2 + M = 2O + M";
+        controlT oxygenDissociationHighT;
+        A        3.87e24;
+        beta     -3.1;
+        Ta       59380;
+        coeffs
+        (
+            ("O2" 1.0)
+            ("O2+" 1.0)
+            ("O" 3.5)
+            ("O+" 3.5)
+            ("e-" 0.0)
+        );
+    }
+
+    // Electron Impact Ionisation Reaction
+    atomicOxygenElectronImpactIonisationReaction
+    {
+        type     irreversibleArrheniusReaction;
+        reaction "O + e- = O+ + e- + e-";
+        controlT impactIonisation; // pb fwd & rev without trick
+        A        3.9e30;
+        beta     -3.78;
+        Ta       158500;
+    }
+
+    // Dissociative Recombination Reaction
+    atomicOxygenAtomicOxygenDissociativeRecombinationReaction
+    {
+        type     irreversibleArrheniusReaction; // pb rev without trick
+        reaction "O + O = O2+ + e-";
+        controlT associativeIonisation;
+        A        7.1e-01;
+        beta     2.7;
+        Ta       80600;
+    }
+}
+

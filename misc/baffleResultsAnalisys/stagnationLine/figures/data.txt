@@ -1,0 +1,10 @@
+Nonequilibrium region length:
+- test case C4: 0.27409200 m
+- test case C5: 0.08875000 m
+
+Stand-off distance:
+- test case C1: -0.95228000 m
+- test case C2: -0.79578700 m
+- test case C3: -0.59479000 m
+- test case C4: -0.79578700 m
+- test case C5: -0.60586800 m

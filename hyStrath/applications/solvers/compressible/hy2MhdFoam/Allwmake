@@ -1,0 +1,9 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+set -x
+
+cd ../hy2Foam
+./Allwmake
+
+cd ../hy2MhdFoam
+wmake
