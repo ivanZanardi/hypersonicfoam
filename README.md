@@ -61,7 +61,7 @@ where _2_ is the number of processors to be used during the installation.
   school  = {Politecnico di Milano},
   address = {Via Lambruschini 15, building 20, ground floor, 20158 Milano, Italy},
   year    = {2020},
-  doi     = {handle/10589/154571}
+  url     = {http://hdl.handle.net/10589/154571}
 }
 ```
 
