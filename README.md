@@ -54,7 +54,7 @@ where _2_ is the number of processors to be used during the installation.
 
 ## Cite HypersonicFoam
 
-```sh
+```
 @masterthesis{Zanardi2020Thesis,
   author  = {Zanardi, Ivan and Piscaglia, Federico and Frezzotti, Aldo},
   title   = {{Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows}},
