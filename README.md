@@ -67,12 +67,16 @@ where _2_ is the number of processors to be used during the installation.
 
 ---  
 
-## Citations
+## References
 
 [1]  C. J. Greenshields, H. G. Weller, L. Gasparini, and J. M. Reese. [*Implementation of semi-discrete, non-staggered central schemes in a colocated, polyhedral, finite volume framework, for high-speed viscous flows*](https://onlinelibrary.wiley.com/doi/abs/10.1002/fld.2069). International Journal for Numerical Methods in Fluids, 63(1):1–21, 2010.
 
-[2]  P. A. Gnoffo, R. N. Gupta, and J. L. Shinn. [*Conservation equations and physical models for hypersonic air flows in thermal and chemical nonequilibrium*](https://ntrs.nasa.gov/search.jsp?R=19890006744). Technical report, NASA, 1989.
+[2]  C. J. Greenshields, H. G. Weller, L. Gasparini, and J. M. Reese. [*Implementation of semi-discrete, non-staggered central schemes in a colocated, polyhedral, finite volume framework, for high-speed viscous flows*](https://onlinelibrary.wiley.com/doi/abs/10.1002/fld.2069). International Journal for Numerical Methods in Fluids, 63(1):1–21, 2010.
 
-[3]  E. A. Mason, R. J. Munn, and F. J. Smith. [*Transport Coefficients of Ionized Gases*](https://aip.scitation.org/doi/abs/10.1063/1.1762365). The Physics of Fluids, 10(8):1827–1832, 1967.
+[3]  C. J. Greenshields, H. G. Weller, L. Gasparini, and J. M. Reese. [*Implementation of semi-discrete, non-staggered central schemes in a colocated, polyhedral, finite volume framework, for high-speed viscous flows*](https://onlinelibrary.wiley.com/doi/abs/10.1002/fld.2069). International Journal for Numerical Methods in Fluids, 63(1):1–21, 2010.
 
-[4]  L. B. Ibraguimova, A. L. Sergievskaya, V. Yu. Levashov, O. P. Shatalov, Yu. V. Tunik, and I. E. Zabelinskii. [*Investigation of oxygen dissociation and vibrational relaxation at temperatures 4000-10800 K*](https://doi.org/10.1063/1.4813070). The Journal of Chemical Physics, 139(3):034317, 2013.
+[4]  P. A. Gnoffo, R. N. Gupta, and J. L. Shinn. [*Conservation equations and physical models for hypersonic air flows in thermal and chemical nonequilibrium*](https://ntrs.nasa.gov/search.jsp?R=19890006744). Technical report, NASA, 1989.
+
+[5]  E. A. Mason, R. J. Munn, and F. J. Smith. [*Transport Coefficients of Ionized Gases*](https://aip.scitation.org/doi/abs/10.1063/1.1762365). The Physics of Fluids, 10(8):1827–1832, 1967.
+
+[6]  L. B. Ibraguimova, A. L. Sergievskaya, V. Yu. Levashov, O. P. Shatalov, Yu. V. Tunik, and I. E. Zabelinskii. [*Investigation of oxygen dissociation and vibrational relaxation at temperatures 4000-10800 K*](https://doi.org/10.1063/1.4813070). The Journal of Chemical Physics, 139(3):034317, 2013.
