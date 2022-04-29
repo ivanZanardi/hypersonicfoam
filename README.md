@@ -52,20 +52,16 @@ where _2_ is the number of processors to be used during the installation.
 
 ---  
 
-## Publications
-
-I. Zanardi. *Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows*. Master thesis, Politecnico di Milano, Italy, April 2020.
+## Cite HypersonicFoam
 
 ```sh
-@article{Zanardi2020Thesis,
-  author  = {Lu, Lu and Meng, Xuhui and Mao, Zhiping and Karniadakis, George Em},
+@masterthesis{Zanardi2020Thesis,
+  author  = {Zanardi, Ivan and Piscaglia, Federico and Frezzotti, Aldo},
   title   = {{Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows}},
-  journal = {SIAM Review},
-  volume  = {63},
-  number  = {1},
-  pages   = {208-228},
-  year    = {2021},
-  doi     = {10.1137/19M1274067}
+  school  = {Politecnico di Milano},
+  address = {Via Lambruschini 15, building 20, ground floor, 20158 Milano, Italy},
+  year    = {2020},
+  doi     = {handle/10589/154571}
 }
 ```
 
