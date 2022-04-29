@@ -1,6 +1,6 @@
 # HypersonicFoam
 
-#### Hypersonic gas dynamics code for OpenFOAM toolbox.
+#### Hypersonic gas dynamics code for OpenFOAM toolbox
 
 ---
 ## Includes
