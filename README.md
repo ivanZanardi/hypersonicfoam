@@ -32,7 +32,7 @@ In **hyPoliMi**:
 
 ### Download
 ```sh
-git clone https://github.com/ivanZanardi/hypersonicFoam
+git clone https://github.com/ivanZanardi/hypersonicfoam
 ```
 
 ### Installation
