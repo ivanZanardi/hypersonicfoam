@@ -63,6 +63,26 @@ where _2_ is the number of processors to be used during the installation.
   year    = {2020},
   url     = {http://hdl.handle.net/10589/154571}
 }
+@article{Casseau2016Aerospace1,
+  author  = {Casseau, Vincent and Palharini, Rodrigo C. and Scanlon, Thomas J. and Brown, Richard E.},
+  title   = {{A Two-Temperature Open-Source CFD Model for Hypersonic Reacting Flows, Part One: Zero-Dimensional Analysis}},
+  journal = {Aerospace},
+  volume  = {3},
+  year    = {2016},
+  number  = {4},
+  url     = {https://www.mdpi.com/2226-4310/3/4/34},
+  issn    = {2226-4310}
+}
+@article{Casseau2016Aerospace2,
+  author  = {Casseau, Vincent and Espinoza, Daniel E. R. and Scanlon, Thomas J. and Brown, Richard E.},
+  title   = {{A Two-Temperature Open-Source CFD Model for Hypersonic Reacting Flows, Part Two: Multi-Dimensional Analysis}},
+  journal = {Aerospace},
+  volume  = {3},
+  year    = {2016},
+  number  = {4},
+  url     = {https://www.mdpi.com/2226-4310/3/4/45},
+  issn    = {2226-4310}
+}
 ```
 
 ---  
