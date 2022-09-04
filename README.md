@@ -1,6 +1,6 @@
 # HypersonicFOAM
 
-#### Hypersonic gas dynamics code for OpenFOAM toolbox.
+#### Hypersonic gas dynamics code for OpenFOAM toolbox
 
 ---
 ## Includes
@@ -12,12 +12,12 @@ In **hyStrath** (look at the [code original version](https://github.com/vincentc
 
 Compared to the original version, the code has been modified by improving or implementing from scratch the following new features:
 
-+ Kurganov scheme calculation capability for the convective term in species conservation equations [1];  
-+ Electronic energy reactive source term generated during the ionization process [2];  
-+ Gupta mixing rule [2];  
-+ Attractive (ion–electron) or repulsive (ion–ion and electron–electron) shielded Coulomb potential by Mason *et al.* [3];  
-+ Appleton-Bray model for E-T energy transfer [2];  
-+ V-T relaxation time models and dissociation rates constants proposed by Shatalov *et al.* [4].  
++ Kurganov scheme calculation capability for the convective term in species conservation equations [3];  
++ Electronic energy reactive source term generated during the ionization process [4];  
++ Gupta mixing rule [4];  
++ Attractive (ion–electron) or repulsive (ion–ion and electron–electron) shielded Coulomb potential by Mason *et al.* [5];  
++ Appleton-Bray model for E-T energy transfer [4];  
++ V-T relaxation time models and dissociation rates constants proposed by Shatalov *et al.* [6].  
 
 In **hyPoliMi**:
 
