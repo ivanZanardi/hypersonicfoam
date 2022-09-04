@@ -6,7 +6,7 @@ HypersonicFOAM is an extension of [hyStrath](https://github.com/vincentcasseau/h
 
 ---
 ## Includes
-In **hyStrath** (look at the [code original version](https://github.com/vincentcasseau/hyStrath) for details):
+In **hyStrath** (look at the original version of the [code](https://github.com/vincentcasseau/hyStrath) for more details):
 
 + *hyFoam*: a CFD solver for supersonic combusting flows;  
 + *hy2Foam*: a CFD solver for hypersonic reacting flows;  
