@@ -1,6 +1,8 @@
 # HypersonicFOAM
 
-#### Hypersonic gas dynamics code for OpenFOAM toolbox
+#### Hypersonic gas dynamics code for OpenFOAM
+
+HypersonicFOAM is an extension of [hyStrath](https://github.com/vincentcasseau/hyStrath) written in C++ fashion for the OpenFOAM toolbox.
 
 ---
 ## Includes
