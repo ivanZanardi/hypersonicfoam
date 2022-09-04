@@ -1,4 +1,4 @@
-# HypersonicFoam
+# HypersonicFOAM
 
 #### Hypersonic gas dynamics code for OpenFOAM toolbox.
 
@@ -52,7 +52,7 @@ where _2_ is the number of processors to be used during the installation.
 
 ---  
 
-## Cite HypersonicFoam
+## Cite HypersonicFOAM
 
 ```
 @masterthesis{Zanardi2020Thesis,
