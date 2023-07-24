@@ -58,7 +58,7 @@ where _2_ is the number of processors to be used during the installation.
 
 ```
 @masterthesis{Zanardi2020Thesis,
-  author  = {Zanardi, Ivan and Piscaglia, Federico and Frezzotti, Aldo},
+  author  = {Zanardi, Ivan},
   title   = {{Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows}},
   school  = {Politecnico di Milano},
   address = {Via Lambruschini 15, building 20, ground floor, 20158 Milano, Italy},
