@@ -70,7 +70,7 @@ Replace `<np>` with the desired number of processors for parallel compilation.
 
 ## Citation
 
-If you use **HypersonicFOAM** in your research, please cite:
+If you use HypersonicFOAM in your research, please cite:
 
 ```bibtex
 @masterthesis{Zanardi2020Thesis,
