@@ -1,104 +1,102 @@
 # HypersonicFOAM
 
-#### Hypersonic gas dynamics code for OpenFOAM
+## Overview
 
-HypersonicFOAM is an extension of [hyStrath](https://github.com/vincentcasseau/hyStrath) written in C++ fashion for the OpenFOAM toolbox.
+HypersonicFOAM is an extended suite of solvers for hypersonic gas dynamics, developed within the OpenFOAM framework. It builds upon the foundations of [hyStrath](https://github.com/vincentcasseau/hyStrath), adopting a modular and object-oriented C++ approach to enable advanced modeling of reacting, ionizing, and magnetized flows.
 
 ---
-## Includes
-In **hyStrath** (look at the original version of the [code](https://github.com/vincentcasseau/hyStrath) for more details):
 
-+ *hyFoam*: a CFD solver for supersonic combusting flows;  
-+ *hy2Foam*: a CFD solver for hypersonic reacting flows;  
-+ *hy2MhdFoam*: the *hy2Foam* solver with additional MagnetoHydroDynamics (MHD) capabilities.  
+## Features and Capabilities
 
-Compared to the original version, the code has been modified by improving or implementing from scratch the following new features:
+### **hyStrath**
 
-+ Kurganov scheme calculation capability for the convective term in species conservation equations [3];  
-+ Electronic energy reactive source term generated during the ionization process [4];  
-+ Gupta mixing rule [4];  
-+ Attractive (ion–electron) or repulsive (ion–ion and electron–electron) shielded Coulomb potential by Mason *et al.* [5];  
-+ Appleton-Bray model for E-T energy transfer [4];  
-+ V-T relaxation time models and dissociation rates constants proposed by Shatalov *et al.* [6].  
+Refer to the [hyStrath](https://github.com/vincentcasseau/hyStrath) repository for additional context and development history. The original codebase provides:
 
-In **hyPoliMi**:
+- `hyFoam`: Solver for supersonic combusting flows.
+- `hy2Foam`: Solver for hypersonic reacting flows.
+- `hy2MhdFoam`: Extension of `hy2Foam` with MagnetoHydroDynamics (MHD) functionality.
 
-+ *rhoCentralReactingFoam*: a CFD solver for supersonic reacting flows based on the latest version of *rhoCentralFoam*.
+This fork introduces several enhancements and new physics models, including:
 
----  
-## Compatibility, Download and Installation
+- Kurganov scheme implementation for convective terms in species transport equations [3].
+- Inclusion of electronic energy source terms due to ionization [4].
+- Gupta mixing rules for thermochemical properties [4].
+- Shielded Coulomb interactions (ion–electron, ion–ion, electron–electron) using Mason *et al.*'s approach [5].
+- Appleton–Bray model for electron–translational (E–T) energy exchange [4].
+- Shatalov's models for vibrational–translational (V–T) relaxation and oxygen dissociation [6].
+
+### **hyPoliMi**
+
+This extension includes:
+
+- `rhoCentralReactingFoam`: A supersonic reacting flow solver based on OpenFOAM's `rhoCentralFoam`, adapted for high-temperature gas dynamics.
+
+---
+
+## Installation
 
 ### Compatibility
-+ hyStrath: [OpenFOAM-v1706](https://sourceforge.net/projects/openfoam/files/v1706)
-+ hyPoliMi: [OpenFOAM-v1912](https://sourceforge.net/projects/openfoam/files/v1912)
+
+| Solver Suite     | Compatible OpenFOAM Version |
+|------------------|-----------------------------|
+| hyStrath         | [v1706](https://sourceforge.net/projects/openfoam/files/v1706)         |
+| hyPoliMi         | [v1912](https://sourceforge.net/projects/openfoam/files/v1912)         |
 
 ### Download
-```sh
+
+```bash
 git clone https://github.com/ivanZanardi/hypersonicfoam
 ```
 
-### Installation
-For **hyStrath**:
-```sh
+### Build Instructions
+
+#### For **hyStrath**:
+
+```bash
 cd hyStrath/  
-./install-all.sh 2 2>&1 | tee log.install
+./install-all.sh <np> 2>&1 | tee log.install
 ```
 
-For **hyPoliMi**:
-```sh
+#### For **hyPoliMi**:
+
+```bash
 cd hyPoliMi/  
-./install.sh 2 2>&1 | tee log.install
+./install.sh <np> 2>&1 | tee log.install
 ```
 
-where _2_ is the number of processors to be used during the installation.
+Replace `<np>` with the desired number of processors for parallel compilation.
 
----  
+---
 
-## Cite HypersonicFOAM
+## Citation
 
-```
+If you use **HypersonicFOAM** in your research, please cite:
+
+```bibtex
 @masterthesis{Zanardi2020Thesis,
-  author  = {Zanardi, Ivan},
-  title   = {{Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows}},
+  author  = {Ivan Zanardi},
+  title   = {Effects of nonequilibrium oxygen dissociation and vibrational relaxation in hypersonic flows},
   school  = {Politecnico di Milano},
   address = {Via Lambruschini 15, building 20, ground floor, 20158 Milano, Italy},
   year    = {2020},
   url     = {http://hdl.handle.net/10589/154571}
 }
-@article{Casseau2016Aerospace1,
-  author  = {Casseau, Vincent and Palharini, Rodrigo C. and Scanlon, Thomas J. and Brown, Richard E.},
-  title   = {{A Two-Temperature Open-Source CFD Model for Hypersonic Reacting Flows, Part One: Zero-Dimensional Analysis}},
-  journal = {Aerospace},
-  volume  = {3},
-  year    = {2016},
-  number  = {4},
-  url     = {https://www.mdpi.com/2226-4310/3/4/34},
-  issn    = {2226-4310}
-}
-@article{Casseau2016Aerospace2,
-  author  = {Casseau, Vincent and Espinoza, Daniel E. R. and Scanlon, Thomas J. and Brown, Richard E.},
-  title   = {{A Two-Temperature Open-Source CFD Model for Hypersonic Reacting Flows, Part Two: Multi-Dimensional Analysis}},
-  journal = {Aerospace},
-  volume  = {3},
-  year    = {2016},
-  number  = {4},
-  url     = {https://www.mdpi.com/2226-4310/3/4/45},
-  issn    = {2226-4310}
-}
 ```
 
----  
+This project is built upon hyStrath [1,2].
+
+---
 
 ## References
 
-[1]  V. Casseau, D. E.R. Espinoza, T. J. Scanlon, and R. E. Brown, [*A Two-Temperature Open-Source CFD Model for Hypersonic Reacting Flows, Part Two: Multi-Dimensional Analysis*](https://www.mdpi.com/2226-4310/3/4/45), Aerospace, vol. 3, no. 4, p. 45, 2016.
+1. Casseau, V., Espinoza, D. E. R., Scanlon, T. J., & Brown, R. E. (2016). *A two-temperature open-source CFD model for hypersonic reacting flows, Part Two: Multi-dimensional analysis*. Aerospace, **3**(4), 45. https://doi.org/10.3390/aerospace3040045
 
-[2]  V. Casseau, R. C. Palharini, T. J. Scanlon, and R. E. Brown, [*A Two-Temperature Open-Source CFD Model for Hypersonic Reacting Flows, Part Two: Multi-Dimensional Analysis*](https://www.mdpi.com/2226-4310/3/4/34), Aerospace, vol. 3, no. 4, p. 34, 2016.
+2. Casseau, V., Palharini, R. C., Scanlon, T. J., & Brown, R. E. (2016). *A two-temperature open-source CFD model for hypersonic reacting flows, Part One: Zero-dimensional analysis*. Aerospace, **3**(4), 34. https://doi.org/10.3390/aerospace3040034
 
-[3]  C. J. Greenshields, H. G. Weller, L. Gasparini, and J. M. Reese, [*Implementation of semi-discrete, non-staggered central schemes in a colocated, polyhedral, finite volume framework, for high-speed viscous flows*](https://onlinelibrary.wiley.com/doi/abs/10.1002/fld.2069), International Journal for Numerical Methods in Fluids, 63(1):1–21, 2010.
+3. Greenshields, C. J., Weller, H. G., Gasparini, L., & Reese, J. M. (2010). *Implementation of semi-discrete, non-staggered central schemes in a colocated, polyhedral, finite volume framework, for high-speed viscous flows*. International Journal for Numerical Methods in Fluids, **63**(1), 1–21. https://doi.org/10.1002/fld.2069
 
-[4]  P. A. Gnoffo, R. N. Gupta, and J. L. Shinn, [*Conservation equations and physical models for hypersonic air flows in thermal and chemical nonequilibrium*](https://ntrs.nasa.gov/search.jsp?R=19890006744), Technical report, NASA, 1989.
+4. Gnoffo, P. A., Gupta, R. N., & Shinn, J. L. (1989). *Conservation equations and physical models for hypersonic air flows in thermal and chemical nonequilibrium* (NASA Technical Memorandum 101440). NASA Langley Research Center. https://ntrs.nasa.gov/citations/19890006744
 
-[5]  E. A. Mason, R. J. Munn, and F. J. Smith, [*Transport Coefficients of Ionized Gases*](https://aip.scitation.org/doi/abs/10.1063/1.1762365), The Physics of Fluids, 10(8):1827–1832, 1967.
+5. Mason, E. A., Munn, R. J., & Smith, F. J. (1967). *Transport coefficients of ionized gases*. Physics of Fluids, **10**(8), 1827–1832. https://doi.org/10.1063/1.1762365
 
-[6]  L. B. Ibraguimova, A. L. Sergievskaya, V. Yu. Levashov, O. P. Shatalov, Yu. V. Tunik, and I. E. Zabelinskii, [*Investigation of oxygen dissociation and vibrational relaxation at temperatures 4000-10800 K*](https://doi.org/10.1063/1.4813070), The Journal of Chemical Physics, 139(3):034317, 2013.
+6. Ibraguimova, L. B., Sergievskaya, A. L., Levashov, V. Y., Shatalov, O. P., Tunik, Y. V., & Zabelinskii, I. E. (2013). *Investigation of oxygen dissociation and vibrational relaxation at temperatures 4000–10800 K*. The Journal of Chemical Physics, **139**(3), 034317. https://doi.org/10.1063/1.4813070
