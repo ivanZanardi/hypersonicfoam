@@ -14,7 +14,7 @@ Refer to the [hyStrath](https://github.com/vincentcasseau/hyStrath) repository f
 
 - `hyFoam`: Solver for supersonic combusting flows.
 - `hy2Foam`: Solver for hypersonic reacting flows.
-- `hy2MhdFoam`: Extension of `hy2Foam` with MagnetoHydroDynamics (MHD) functionality.
+- `hy2MhdFoam`: Extension of `hy2Foam` with magnetohydrodynamics (MHD) functionality.
 
 This fork introduces several enhancements and new physics models, including:
 
