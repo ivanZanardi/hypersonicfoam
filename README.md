@@ -1,10 +1,11 @@
 # HypersonicFOAM
 
-## Overview
-
-HypersonicFOAM is an extended suite of solvers for hypersonic gas dynamics, developed within the OpenFOAM framework. It builds upon the foundations of [hyStrath](https://github.com/vincentcasseau/hyStrath), adopting a modular and object-oriented C++ approach to enable advanced modeling of reacting, ionizing, and magnetized flows.
+**Hypersonic flow simulations in OpenFOAM**
 
 ---
+[![DOI](https://zenodo.org/badge/487120955.svg)](https://doi.org/10.5281/zenodo.15604203)
+
+HypersonicFOAM is an extended suite of solvers for hypersonic gas dynamics, developed within the OpenFOAM framework. It builds upon the foundations of [hyStrath](https://github.com/vincentcasseau/hyStrath), adopting a modular and object-oriented C++ approach to enable advanced modeling of reacting, ionizing, and magnetized flows.
 
 ## Features and Capabilities
 
@@ -80,6 +81,16 @@ If you use HypersonicFOAM in your research, please cite:
   address = {Via Lambruschini 15, building 20, ground floor, 20158 Milano, Italy},
   year    = {2020},
   url     = {http://hdl.handle.net/10589/154571}
+}
+@software{ivan_zanardi_2025_15604204,
+  author       = {Ivan Zanardi},
+  title        = {HypersonicFOAM: Hypersonic flow simulations in OpenFOAM},
+  month        = {06},
+  year         = {2025},
+  publisher    = {Zenodo},
+  version      = {v0.1.0},
+  doi          = {10.5281/zenodo.15604204},
+  url          = {https://doi.org/10.5281/zenodo.15604204},
 }
 ```
 
